@@ -1,5 +1,5 @@
 # <center>NLP: Множественная классификация текстов отзывов.</center>
----
+
 
 ## Описание проекта.
 
@@ -42,7 +42,8 @@ accuracy_score(np.array([[0, 1], [1, 1]]), np.ones((2, 2)))
 - _Решение 1_.<br>
 Несмотря на присутствие в датасете большого количества объектов со всеми отрицательными классами, обучение на всём датасете может увеличить понимание моделью признаков.
   - Результат: `accuracy` - `0.61`.
-  - Ссылка на решение (ноутбук `Notebooks/Ya_NLP_Mutlilabel_Samokat_catboost.ipynb`)
+  - Предсказания на тестовых данных: [submit_URL](https://github.com/mrBrain101/Projects/blob/f9d192f08392fe54eb09d378661e37cc2f739693/01_NLP_Multilabel_Samokat/Notebooks/Data/submission.csv.zip)
+  - [Ссылка на решение](https://github.com/mrBrain101/Projects/blob/f9d192f08392fe54eb09d378661e37cc2f739693/01_NLP_Multilabel_Samokat/Notebooks/Ya_NLP_Mutlilabel_Samokat_catboost.ipynb) (ноутбук `Notebooks/Ya_NLP_Mutlilabel_Samokat_catboost.ipynb`)
   - Модель:
     - `CatBoostClassifier`.
   - Данные:
@@ -54,7 +55,7 @@ accuracy_score(np.array([[0, 1], [1, 1]]), np.ones((2, 2)))
 Очистка датасета от объектов со всеми отрицательными классами поможет модели в классификации, т.к., исходя из описания классов, хотя бы один из них должен быть положительным, следовательно датасет недоразмечен.<br>
   - Результат:<br>
 Решение не сработало. Нейросеть требует больше времени на доработку и эксперименты с включением тэгов/оценок в текст и пр.<br>
-  - Ссылка на решение (ноутбук`Notebooks/Tests/Ya_NLP_Mutlilabel_Samokat_MixedInputNN.ipynb`).
+  - [Ссылка на решение](https://github.com/mrBrain101/Projects/blob/f9d192f08392fe54eb09d378661e37cc2f739693/01_NLP_Multilabel_Samokat/Notebooks/Tests/Ya_NLP_Mutlilabel_Samokat_MixedInputNN.ipynb) (ноутбук`Notebooks/Tests/Ya_NLP_Mutlilabel_Samokat_MixedInputNN.ipynb`).
   - Модель:<br>
     Для более глубокого понимания датасета моделью и из-за сравнительно небольшого кол-ва размеченных классов, обучим на очищенных данных нейросеть со смешаным входом.
   - Данные:
@@ -66,7 +67,7 @@ accuracy_score(np.array([[0, 1], [1, 1]]), np.ones((2, 2)))
 Т.к. точно размеченных данных относительно немного, может сработать самообучение модели с псевдоразметкой: обучение классификатора на размеченных данных и последующее итеративное включение предсказаний с заданной точностью в обучающую выборку с переобучением модели.<br>
   - Результат:<br>
 Решение не сработало. Хорошим экспериментом была бы проверка самообучения большой языковой модели типа `ruGPT` или подобных, на работу с которыми требуется больше времени и ресурсов.<br>
-  - Ссылка на решение (ноутбук `Notebooks/Tests/Ya_NLP_Mutlilabel_Samokat_catboost_self_training.ipynb`).
+  - [Ссылка на решение](https://github.com/mrBrain101/Projects/blob/f9d192f08392fe54eb09d378661e37cc2f739693/01_NLP_Multilabel_Samokat/Notebooks/Tests/Ya_NLP_Mutlilabel_Samokat_catboost_self_training.ipynb) (ноутбук `Notebooks/Tests/Ya_NLP_Mutlilabel_Samokat_catboost_self_training.ipynb`).
   - Модель:<br>
     `CatBoostClassifier`.
   - Данные:
